@@ -1,0 +1,245 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 70px auto auto;
+    grid-auto-rows: auto;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer"
+    ;
+    grid-gap: 25%;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgb(52, 52, 135);
+}
+
+header nav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+
+header nav ul li {
+    list-style: none;
+    display: block;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 2% 0 2%;
+}
+
+header nav ul li a {
+    color: aliceblue;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: larger;
+    text-shadow: 2px 1px 5px rgba(132, 234, 234, 0.744);
+    display: block;
+}
+
+header nav ul li:hover {
+    background-color: rgb(141, 33, 62);
+    cursor: pointer;
+}
+
+#nav2 {
+    display: none;
+}
+
+#mopileNav {
+    display: none;
+}
+
+main {
+    grid-area: main;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    padding: 1.5% 3% 1.5% 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dadadae1;
+    margin-bottom: 0px;
+    gap: 35px 10%;
+    flex-wrap: wrap;
+}
+
+footer ul {
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+footer ul li a,
+footer ul li {
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+    align-items: flex-end;
+    font-size: 17px;
+    color: rgb(52, 52, 135);
+}
+
+footer ul li a i {
+    font-size: 20px;
+}
+
+footer p {
+    text-align: center;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    gap: 10px 20px;
+}
+
+footer form h2 {
+    color: rgb(52, 52, 135);
+    font-weight: 900;
+    text-align: center;
+    font-size: larger;
+    font-family: 'PT Serif', serif;
+}
+
+footer form input {
+    border: none;
+    padding: 3% 3% 3% 5%;
+    border-radius: 5px;
+}
+
+footer form button {
+    margin: auto;
+    width: 60%;
+    padding: 3%;
+    border: none;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #b79a84;
+    border-radius: 7px;
+    cursor: pointer;
+    justify-self: center;
+}
+
+footer form button:hover {
+    background-color: #fa6e02;
+}
+
+@media only screen and (max-width: 590px) {
+    footer {
+        justify-content: center;
+        text-align: center;
+        padding: 5% 0 5% 0;
+    }
+
+    footer ul {
+        justify-content: center;
+        text-align: center;
+    }
+
+    footer ul li {
+        justify-content: center;
+        text-align: center;
+    }
+
+    #nav1 {
+        display: none;
+    }
+
+    #nav2 {
+        display: inline;
+        display: flex;
+        justify-content: flex-start;
+        cursor: pointer;
+        color: aliceblue;
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    #nav22 {
+        display: inline;
+        display: flex;
+        justify-content: flex-start;
+        cursor: pointer;
+        color: aliceblue;
+        font-size: 20px;
+        padding-left: 20px;
+        position: absolute;
+        top: 25px;
+    }
+
+    #mopileNav {
+        height: 100%;
+        width: 0%;
+        top: 0%;
+        position: fixed;
+        right: 0;
+        background-color: #23709c60;
+        transition: 0.5s;
+        padding-top: 15%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #mopileNav a {
+        font-family: sans-serif;
+        right: 0;
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+        transition: 0.4s;
+        height: 13%;
+        text-shadow: 2px 2px 5px #121010;
+        font-weight: bold;
+    }
+
+    #mopileNav a:hover {
+        color: #121010;
+        text-shadow: 2px 2px 5px #ffffff;
+    }
+}
+@media only screen and (min-width: 996px ){
+    footer ul:last-child{
+        justify-self: center;
+        margin: auto;
+    }
+}
