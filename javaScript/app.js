@@ -23,13 +23,13 @@ function getRndInteger(min, max) {
 }
 Employee.prototype.employeeSalary= function () {
     if (this.employeeLevel == "Senior") {
-        return (getRndInteger(1500, 2000) - (getRndInteger(1500, 2000) - 7.5));
+        return (getRndInteger(1500, 2000) - (getRndInteger(1500, 2000)* (7.5/100)));
     }
     else if (this.employeeLevel == "Mid-Senior") {
-        return (getRndInteger(1000, 1500) - (getRndInteger(1000, 1500) - 7.5));
+        return (getRndInteger(1000, 1500) - (getRndInteger(1000, 1500) * (7.5/100)));
     }
     else if (this.employeeLevel == "Junior") {
-        return (getRndInteger(500, 1000) - (getRndInteger(500, 1000) - 7.5));
+        return (getRndInteger(500, 1000) - (getRndInteger(500, 1000) * (7.5/100)));
     }
 }
 Employee.prototype.render= function () {
