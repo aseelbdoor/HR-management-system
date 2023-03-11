@@ -13,7 +13,7 @@ body {
         "main"
         "footer"
     ;
-    grid-gap: 25%;
+    grid-gap: 15%;
 }
 
 header {
@@ -34,7 +34,7 @@ header nav {
 
 header nav ul {
     display: flex;
-    width: 80%;
+    width: 60%;
     height: 100%;
     justify-content: space-around;
     align-items: center;
@@ -78,8 +78,84 @@ main {
     grid-area: main;
     width: 100%;
     text-align: center;
+    display: grid;
+    row-gap: 10%;
 }
+.form {
+    padding:2%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.form form{
+    background-color: #dededd;
+    width: 500px;
+    border:2px solid #c8dbff;
+    border-radius: 15px;
+    padding: 4% 2% 1% 6%;
+    text-align: left;
+}
+.form form label{
+    font-size: 16px;
+    font-weight: bold;
+}
+.form form select,
+.form form input[type="text"]{
+    background-color: #ffffff;
+    font-size: 15px;
+    padding: 1% 1% 1% 3%;
+    border: none;
+    width: 60%;
+    border-radius: 5px;
+}
+.form form select:hover,
+.form form input[type="text"]:hover,
+.form form input[type="file"]:hover,
+.form form select:focus,
+.form form input[type="file"]:focus,
+.form form input[type="text"]:focus{
+    border: none;
+    box-shadow: 2px 2px 5px rgb(52, 52, 135);
+}
+.form form select,
+.form form button{
+    cursor: pointer;
+}
+.form form input[type="file"]{
+    background-color: aliceblue;
+    border-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 80%;
+    border-bottom-left-radius: 10px;
 
+}
+.form form input[type="file"]::-webkit-file-upload-button{
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 3% 3% 3% 5%;
+    color: #ffffff;
+    font-weight: bolder;
+    cursor: pointer;
+    background-image: linear-gradient(10deg,blue,#000);
+
+}
+.form form button{
+    margin-left: 40%;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    padding: 2% 3% 2% 3%;
+}
+#employee{
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    padding: 0 2% 0 4%;
+}
+#employee div{
+    margin-bottom: 5%;
+}
 footer {
     grid-area: footer;
     width: 100%;
@@ -88,7 +164,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     background-color: #dadadae1;
-    margin-bottom: 0px;
+    bottom: 0px;
     gap: 35px 10%;
     flex-wrap: wrap;
 }
@@ -159,7 +235,7 @@ footer form button:hover {
     background-color: #fa6e02;
 }
 
-@media only screen and (max-width: 590px) {
+@media only screen and (max-width: 644px) {
     footer {
         justify-content: center;
         text-align: center;
@@ -237,9 +313,8 @@ footer form button:hover {
         text-shadow: 2px 2px 5px #ffffff;
     }
 }
-@media only screen and (min-width: 996px ){
+@media only screen and (min-width: 996px ) {
     footer ul:last-child{
-        justify-self: center;
         margin: auto;
     }
 }
