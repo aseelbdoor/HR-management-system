@@ -152,6 +152,7 @@ main {
     gap: 5%;
     flex-wrap: wrap;
     padding: 0 2% 0 4%;
+    justify-content: center;
 }
 #employee div{
     margin-bottom: 5%;
@@ -225,7 +226,7 @@ footer form button {
     border: none;
     font-weight: bold;
     color: #ffffff;
-    background-color: #b79a84;
+    background-color: #c6a289;
     border-radius: 7px;
     cursor: pointer;
     justify-self: center;
@@ -235,6 +236,26 @@ footer form button:hover {
     background-color: #fa6e02;
 }
 
+/* Accounting page */
+/* ================================================================ */
+.accounting{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+}
+.accounting table{
+    width:550px;
+    border: 2px solid #000;
+}
+.accounting table th,
+.accounting table td{
+    border: 2px solid #000;
+}
+
+
+
+
+/* ================================================================ */
 @media only screen and (max-width: 644px) {
     footer {
         justify-content: center;

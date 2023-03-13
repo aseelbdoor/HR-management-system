@@ -7,6 +7,7 @@ function Employee(employeeID, employeeFullName, employeeDepartment, employeeLeve
     this.employeeDepartment = employeeDepartment;
     this.employeeLevel = employeeLevel;
     this.employeeImg = employeeImg;
+    this.salary=this.employeeSalary();
     allEmployee.push(this);
 }
 function getRndInteger(min, max) {
@@ -64,7 +65,6 @@ const hadi = new Employee(1006, "Hadi Ahmad", "Finance", "Mid-Senior", "./img/Ha
 
 
 
-
 // 
 // 
 // lab 08
@@ -79,6 +79,7 @@ function newInput(label,type,name){
     input.name=name;
     input.id=name;
     input.placeholder=label;
+    input.required;
     form.appendChild(input);
 }
 function addSelect(arr,label,name){
@@ -128,6 +129,7 @@ newRow(); newRow();
 formID.appendChild(form);
 
 
+
 // submit part
 function submitEvent(event){
     event.preventDefault();
@@ -135,14 +137,48 @@ function submitEvent(event){
     let dep=event.target.department.value;
     let level=event.target.level.value;
     let personalImg=event.target.photo.value;
-    console.log(name,dep,level,personalImg);
-    const newEmployee = new Employee(uniqeId(),name,dep,level,personalImg);
+    const newEmployee = [uniqeId(),name,dep,level,personalImg];
     console.log(personalImg);
     // The image does not exist due to a security issue that I could not solve
-    newEmployee.render();
+    const newEmployee1 = new Employee(newEmployee[0],newEmployee[1],newEmployee[2],newEmployee[3],newEmployee[4]);
+    newEmployee1.render();
+    let data=JSON.stringify(newEmployee);
+    localStorage.setItem(`${newEmployee[0]}`,data);
+
+
 }
 form.addEventListener("submit",submitEvent);
+
+
+// localStorage
+
+function getItem(){
+    allID=new Array();
+    let items=localStorage.length;
+    for (let i=0;i<items;i++){
+        allID.push(localStorage.key(i));
+    }
+    allID.forEach(element => {
+        oneItem=localStorage.getItem(element);
+        oneItem=JSON.parse(oneItem);
+        let convert;
+        convert=new Employee(oneItem[0],oneItem[1],oneItem[2],oneItem[3],oneItem[4]);
+    });
+}
+
+
+if(localStorage.getItem("employee")){
+    localStorage.removeItem("employee");
+    getItem();
+}
+else{
+    getItem();
+}
+
 
 for (let i=0;i<allEmployee.length;i++){
     allEmployee[i].render();
 }
+console.log(allEmployee);
+allEmp=JSON.stringify(allEmployee);
+localStorage.setItem("employee",allEmp);
